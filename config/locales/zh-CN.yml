@@ -1,0 +1,21 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+zh-CN:
+  sessions:
+    new:
+      title: "安全控制面板"
+      username: "用户名"
+      password: "密码"
+      email : "注册邮箱"
+      forget_password: "忘记密码"
+      login: "登陆"
+      passwordRetrievalPrompt: "请输入用户名和注册邮箱,密码将发到此邮箱"
+      passwordSentToEmail : "您的密码已经发送至您的注册邮箱"
+      send: "发送"
+      cancel: "取消"
+      sending : "正在发送..."
+  events:
+    header:
+      logout: "登出"
+      logoutConfirmation: "你确定要登出嘛?"

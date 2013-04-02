@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link type="image/x-icon" href="img/logo.png" rel="icon">
+  <title><%= @page_title || Dashboard %></title>
+  <!--<%= stylesheet_link_tag    "application", :media => "all" %>-->
+  <!--<%= javascript_include_tag "application" %>-->
+  <%= stylesheet_link_tag 'test', :cache => "all" %>
+  <%= javascript_include_tag 'jquery', 'rails', 'events', :cache => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
+

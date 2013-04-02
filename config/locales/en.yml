@@ -1,0 +1,22 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en:
+  sessions:
+    new:
+      title: "Secure Dashboard"
+      username: "Username"
+      password: "Password"
+      email : "Email"
+      forget_password: "Forget your password"
+      login: "Login"
+      passwordRetrievalPrompt: "Please enter your username and email to have your password emailed to you"
+      passwordSentToEmail : "Your password has been sent to your email address"
+      send: "Send"
+      cancel: "Cancel"
+      sending: "sending..."
+  events:
+    header:
+      logout: "Logout"
+      logoutConfirmation: "Are you sure to log out?"
+

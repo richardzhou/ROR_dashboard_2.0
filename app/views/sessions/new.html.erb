@@ -1,0 +1,90 @@
+<div id="greeting"></div>
+<div id="secure_logo"><img src="images/secureLogin_2.png"></div>
+<div id="secure_login">Secure Login</div>
+<div id="please_login"><%= t('.title') %>
+    <%= form_tag login_url, :class=>'locale' do %>
+        <%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), :onchange=>'this.form.submit()' %>
+        <%= submit_tag 'submit' %>
+        <%= javascript_tag "$('.locale input').hide();" %>
+    <% end %>
+</div>
+<div id="login" class="dashboard_form">
+<!--
+  <div id="loginerror">
+    <% if flash[:alert] %>
+        <p id="notice"><%= flash[:alert] %></p>
+    <% end %>
+  </div>
+-->
+  <%= show_div_if(flash[:alert].nil?, :id => "login_error") do %>
+      username and password not correct!
+  <% end %>
+
+  <%= form_tag do %>
+      <table>
+        <tr>
+          <td><label for="username"><%= t('.username') %>:</label></td>
+          <td><%= text_field_tag :username, params[:username] %></td>
+        </tr>
+        <tr>
+          <td><br><label for="password"><%= t('.password') %>:</label></td>
+          <td><br><%= password_field_tag :password, params[:password] %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><br><br><%= submit_tag t('.login'), :id=>"login_submit" %></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><br><div id="forget"><a href="javascript:void(0);"><%= t('.forget_password') %>?</a></div></td>
+        </tr>
+      </table>
+<!--
+      <fieldset>
+        <div>
+          <label for="username"><%= t('.username') %>:</label>
+          <%= text_field_tag :username, params[:username] %>
+        </div>
+
+        <div>
+          <label for="password"><%= t('.password') %>:</label>
+          <%= password_field_tag :password, params[:password] %>
+        </div>
+
+        <div>
+          <%= submit_tag "Login" %>
+        </div>
+
+      </fieldset>
+-->
+  <% end %>
+<!--
+  <br>
+  <div style="position:relative;">
+    <div id="forget"><a href="javascript:void(0);"><%= t('.forget_password') %>?</a></div>
+  </div>
+-->
+  <div id="forget_popup" style="display:none;">
+    <table>
+      <tr><td colspan="2" style="padding-bottom:10px;"><%= t('.passwordRetrievalPrompt') %></td></tr>
+      <tr>
+        <!--<td class="left">username: </td><td class="right"><input type="text"  id="uname_forget" autocomplete="off" /></td>-->
+        <td class="left"><label for="uname_forget"><%= t('.username') %>:</label></td>
+        <td class="right"><%= text_field_tag :uname_forget, '', :autocomplete=>'off'  %></td>
+      </tr>
+      <tr>
+        <!--<td class="left">email: </td><td class="right"><input type="email"  id="email_forget" autocomplete="off" /></td>-->
+        <td class="left"><label for="email_forget"><%= t('.email') %>:</label></td>
+        <td class="right"><%= text_field_tag :email_forget, '', :autocomplete=>'off'  %></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+          <button id="retrieve_password" type="submit" value="Send" /><%= t('.send') %></button>
+          <button id="cancel_it" type="button" style="margin-left:0px;"><%= t('.cancel') %></button>
+        </td>
+      </tr>
+    </table>
+    <div id="sending" style="font-size:10px;font-weight:bold;font-style:italic;padding-left:10px;display:none;"><%= t('.sending') %></div>
+  </div>
+</div>
