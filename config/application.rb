@@ -47,7 +47,7 @@ module Dashboard
     # This is necessary if your schema can't be completely dumped by the schema dumper,
     # like if you have constraints or database-specific column types
     # 改用 :sql 的話，Rails 會倒出現有的 development 資料庫，產生 #{Rails.env}_structure.sql 檔案來作為測試資料庫之用。
-    # (by changing it wo :sql, Rails will export the existing development DB and generate #{Rails.env}_structure.sql for testing DB)
+    # (by changing it wo :sql, Rails will export the existing development DB and generate #{Rails.env}_structure.sql for testing DB purpose)
     # config.active_record.schema_format = :sql
 
     # Enforce whitelist mode for mass assignment.

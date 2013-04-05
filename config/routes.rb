@@ -3,11 +3,11 @@ Dashboard::Application.routes.draw do
   #get 'users/retrieve_password'
   post 'users/retrieve_password'
 
-  controller :sessions do
-    get 'login' => :new
-    post 'login' => :create
-    delete 'logout' => :destroy
-  end
+  #controller :sessions do
+  #  get 'login' => :new
+  #  post 'login' => :create
+  #  delete 'logout' => :destroy
+  #end
 
   scope '(:locale)' do
     resources :users

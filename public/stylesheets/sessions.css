@@ -10,8 +10,8 @@ body,div{
     text-align:center;
 }
 body{
-    background: #1C1C1C url(/img/bg_login.jpg) no-repeat top center fixed;/*for browsers that dont support multiple background images*/
-    background: url(/img/bg_login.jpg) no-repeat top center fixed, url(/img/bg_tile.jpg) repeat top left fixed;
+    background: #1C1C1C url(/images/bg_login.jpg) no-repeat top center fixed;/*for browsers that dont support multiple background images*/
+    background: url(/images/bg_login.jpg) no-repeat top center fixed, url(/images/bg_tile.jpg) repeat top left fixed;
 }
 
 img{border:none;}

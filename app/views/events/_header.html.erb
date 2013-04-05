@@ -9,20 +9,24 @@
     PI: <font class="header_orange">PI INFO</font>
   </div>
   <div id="doctor">
-    <a href="javascript:void(0);" onclick="showhelp()"><img id="help_logo" src="images/help.png"></a>
-    Hello, <%= @current_user.username %>.&nbsp;&nbsp;<span style="color:#F58220;"></span>
-    <!--<a href="#">Logout</a>-->
-    <!--<%= button_to 'Logout', logout_path, :method => :delete   %>-->
-    <%= link_to t('.logout'), logout_path, :method=>:delete, :data=>{:confirm=>t('.logoutConfirmation')} %>
+    <a href="javascript:void(0);" onclick="showhelp()"><img id="help_logo" src="/images/help.png"></a>
+    <!--header.username = @current_user.username-->
+    Hello, <%= header.username %>.&nbsp;&nbsp;<span style="color:#F58220;"></span>
+    <%= link_to t('.logout'), logout_path, :method=>:delete, :data=>{:confirm=>t('.logout_confirmation')} %>
   </div>
   <div id="logo">
     <!--Ai<font class="bullet">&bull;</font>CURE<font class="bullet">&bull;</font>TECHNOLOGiES-->
   </div>
-  <a href="#" id="arrows"><img id="aDn" src="images/arrows.png" style=""><img id="aUp" src="images/arrowsUp.png" style="display:none;"></a>
+  <a href="#" id="arrows"><img id="aDn" src="/images/arrows.png" style=""><img id="aUp" src="/images/arrowsUp.png" style="display:none;"></a>
 </div>
 <div id="help_dropdown">
   <!--<a href="manuals/<%= @documents.quick_start %>" target="_blank" style="color:#00f;">Dashboard Quick Start Guide</a>-->
-  <%= link_to "Dashboard Quick Start GUide", "manuals/#{@documents.quick_start}", :target => "_blank" %>
-  <p style="margin-top:5px;"><a href="manuals/<%= @documents.full_manual %>" target="_blank" style="color:#00f;">Dashboard Manual</a></p>
-  <span style="margin-top:2px;display:block;">Email: <a href="mailto:<%= @documents.support_email %>" style="color:#222;text-decoration:underline;"><%= @documents.support_email %></a>	<br>Phone: <span><%= @documents.support_phone %></span></span>
+  <p style="margin-top:5px;">
+    <%= link_to t('.dashboard_quick_start_guide'), "/manuals/#{quick_start}", :target => "_blank" %><br>
+    <a href="/manuals/<%= full_manual %>" target="_blank" style="color:#00f;"><%= t('.dashboard_manual') %></a>
+  </p>
+  <p style="margin-top:2px;">
+    <%= t('.email') %>:<!--<a href="mailto:<%= @documents.support_email %>" style="color:#222;text-decoration:underline;"><%= support_email %></a><br>--><%= mail_to(support_email, support_email, :subject=>"Support question from #{header.username}", :encode=>"javascript") %><br>
+    <%= t('.phone') %>:<span><%= support_phone %></span>
+  </p>
 </div>

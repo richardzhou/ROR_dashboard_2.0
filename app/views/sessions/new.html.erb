@@ -17,7 +17,7 @@
   </div>
 -->
   <%= show_div_if(flash[:alert].nil?, :id => "login_error") do %>
-      username and password not correct!
+      <%= t('.login_error') %>
   <% end %>
 
   <%= form_tag do %>
@@ -66,7 +66,7 @@
 -->
   <div id="forget_popup" style="display:none;">
     <table>
-      <tr><td colspan="2" style="padding-bottom:10px;"><%= t('.passwordRetrievalPrompt') %></td></tr>
+      <tr><td colspan="2" style="padding-bottom:10px;"><%= t('.password_retrieval_prompt') %></td></tr>
       <tr>
         <!--<td class="left">username: </td><td class="right"><input type="text"  id="uname_forget" autocomplete="off" /></td>-->
         <td class="left"><label for="uname_forget"><%= t('.username') %>:</label></td>
@@ -75,7 +75,8 @@
       <tr>
         <!--<td class="left">email: </td><td class="right"><input type="email"  id="email_forget" autocomplete="off" /></td>-->
         <td class="left"><label for="email_forget"><%= t('.email') %>:</label></td>
-        <td class="right"><%= text_field_tag :email_forget, '', :autocomplete=>'off'  %></td>
+        <!--<td class="right"><%= text_field_tag :email_forget, '', :autocomplete=>'off'  %></td>-->
+        <td class="right"><%= email_field_tag :email_forget, '', :autocomplete=>'off'  %></td>
       </tr>
       <tr>
         <td>&nbsp;</td>
