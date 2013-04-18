@@ -16,7 +16,7 @@ zh-CN:
       send: "发送"
       cancel: "取消"
       sending : "正在发送..."
-  events:
+  shared:
     header:
       dashboard_quick_start_guide: "控制面板快速导航"
       dashboard_manual: "控制面板使用手册"

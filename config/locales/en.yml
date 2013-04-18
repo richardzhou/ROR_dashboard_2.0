@@ -16,7 +16,7 @@ en:
       send: "Send"
       cancel: "Cancel"
       sending: "sending..."
-  events:
+  shared:
     header:
       dashboard_quick_start_guide: "Dashboard Quick Start Guide"
       dashboard_manual: "Dashboard Manual"

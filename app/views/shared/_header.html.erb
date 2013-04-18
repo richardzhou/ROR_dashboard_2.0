@@ -22,11 +22,11 @@
 <div id="help_dropdown">
   <!--<a href="manuals/<%= @documents.quick_start %>" target="_blank" style="color:#00f;">Dashboard Quick Start Guide</a>-->
   <p style="margin-top:5px;">
-    <%= link_to t('.dashboard_quick_start_guide'), "/manuals/#{quick_start}", :target => "_blank" %><br>
-    <a href="/manuals/<%= full_manual %>" target="_blank" style="color:#00f;"><%= t('.dashboard_manual') %></a>
+    <%= link_to t('.dashboard_quick_start_guide'), "/manuals/#{Help::QUICK_START}", :target => "_blank" %><br>
+    <a href="/manuals/<%= Help::FULL_MANUAL %>" target="_blank" style="color:#00f;"><%= t('.dashboard_manual') %></a>
   </p>
   <p style="margin-top:2px;">
-    <%= t('.email') %>:<!--<a href="mailto:<%= @documents.support_email %>" style="color:#222;text-decoration:underline;"><%= support_email %></a><br>--><%= mail_to(support_email, support_email, :subject=>"Support question from #{header.username}", :encode=>"javascript") %><br>
-    <%= t('.phone') %>:<span><%= support_phone %></span>
+    <%= t('.email') %>:<%= mail_to(Help::SUPPORT_EMAIL, Help::SUPPORT_EMAIL, :subject=>"Support question from #{header.username}", :encode=>"javascript") %><br>
+    <%= t('.phone') %>:<span><%= Help::SUPPORT_PHONE %></span>
   </p>
 </div>

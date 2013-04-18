@@ -9,7 +9,7 @@ Dashboard::Application.routes.draw do
   #  delete 'logout' => :destroy
   #end
 
-  scope '(:locale)' do
+  #scope '(:locale)' do
     resources :users
     resources :events
     controller :sessions do
@@ -17,7 +17,7 @@ Dashboard::Application.routes.draw do
       post 'login' => :create
       delete 'logout' => :destroy
     end
-  end
+  #end
 
 
   # The priority is based upon order of creation:

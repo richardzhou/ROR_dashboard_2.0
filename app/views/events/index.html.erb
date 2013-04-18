@@ -22,7 +22,17 @@
 <%= link_to 'New Event', new_event_path %>
 -->
 
-<%= render :partial=>'header', :object=>@current_user, :locals=>{:quick_start=>@documents.quick_start, :full_manual=>@documents.full_manual, :support_email=>@documents.support_email, :support_phone=>@documents.support_phone} %>
+<%=
+=begin
+    render :partial=>'shared/header',
+           :object=>@current_user,
+           :locals=>{:quick_start=>@documents.quick_start,
+                     :full_manual=>@documents.full_manual,
+                     :support_email=>@documents.support_email,
+                     :support_phone=>@documents.support_phone}
+=end
+%>
+<%= render :partial=> 'shared/header', :object=>@current_user %>
 <%= render :partial=> 'left_event' %>
 <%= render :partial=> 'middle_event' %>
 <%= render :partial=> 'right_event' %>

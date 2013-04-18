@@ -40,3 +40,15 @@ gem 'rvm-capistrano'
 
 # To use debugger
 # gem 'debugger'
+
+gem 'httparty'
+
+gem 'foreman'
+
+gem 'annotate', '~>2.5.0'
+
+group :test, :development do
+  gem "rspec", "~> 2.0"
+  gem "rspec-rails", "~> 2.0"
+  gem "factory_girl_rails", "~> 4.0"
+end
