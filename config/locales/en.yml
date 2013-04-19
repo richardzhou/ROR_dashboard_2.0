@@ -22,6 +22,16 @@ en:
       dashboard_manual: "Dashboard Manual"
       email: "Email"
       phone: "Phone"
+      hello: "Hello"
       logout: "Logout"
       logout_confirmation: "Are you sure to log out?"
+  events:
+    left_navigation:
+      dashboard: "Dashboard"
+      patient_list: "Patient List"
+      events&tasks: "Events & Tasks"
+      analytics: "Analytics"
+      search: "Search"
+      settings: "Settings"
+
 

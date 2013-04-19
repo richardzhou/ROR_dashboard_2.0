@@ -34,8 +34,8 @@ img{border:none;}
 #shadedropdown {position:absolute;top:40px;left:50%;color:#fff;background:#222 url('../images/shade_bg.jpg') top left repeat;width:50%;left:0px;width:100%;height:100%;padding:30px 0;z-index:9998;}
 #shadedropdown  img{position:absolute;height:40px;width:20px;margin:0 auto;}
 #shadeleft {position:absolute;top:30px;border-radius:5px}
-.shadeleftinner {border-bottom:2px solid #111;height:32px;text-align:left;padding:14px 0 0 14px;background:#222;font-size:15px;font-weight:bold;}
-.shadeleftinner:hover {background-color:#ccc;}
+.shadeleft_navigation_tab {border-bottom:2px solid #111;height:32px;text-align:left;padding:14px 0 0 14px;background:#222;font-size:15px;font-weight:bold;}
+.shadeleft_navigation_tab:hover {background-color:#ccc;}
 .activeshade {color:#C13C41;background:#222 url('../images/checkmark_blue.png') 96% 50% no-repeat;}
 #help_dropdown {display:none;position:absolute;top:40px;right:10px;min-width:280px;color:#222;background:#FFED9E url('../images/paper_ryan.jpg') top left repeat;border:2px solid #111;padding:15px;z-index:9999;border-radius:10px;font-size:14px;font-weight:bold;}
 img#help_logo {height:30px;width:30px;float:left;padding-top:5px;margin-right:10px;}
@@ -54,28 +54,29 @@ img#help_logo {height:30px;width:30px;float:left;padding-top:5px;margin-right:10
 /*----------------------  left column  ---------------------*/
 /*whole left column*/
 #left{border:none;position:absolute;top:87px;}
-
+#main {width: 100%;height: 100%;margin-top: 50px;}
 /*styling for left side nav (Events/Patients tab)*/
-#leftnav{height:55px;}
-#leftnav ul{list-style-type:none;padding:0px;margin:0px;}
-#leftnav ul:hover{cursor:pointer;}
-#leftnav li {width:75px; height:31px; color:#ddd;float:left;display: inline;padding-top:7px;font-size:13px;font-weight:bold;}
-#leftnav li:hover, #leftnav li:hover a{color:#bbb;}
-#leftnav li.current, #leftnav li.current a{color:#000;}
-#leftnav li a {color:#fff;}
-#leftnav #leftnav1 {background:url('../images/buttons/button_left_blank.png') no-repeat top left;}
-#leftnav #leftnav1.current {background:url('../images/buttons/button_left_highlighted.png') no-repeat top left;}
-#leftnav #leftnav2 {background:url('../images/buttons/button_right_blank.png') no-repeat top left;}
-#leftnav #leftnav2.current {background:url('../images/buttons/button_right_highlighted.png') no-repeat top left;}
+#left_navigation {list-style-type:none;float:left;margin:0px}
+#left_navigation :hover{cursor:pointer;}
+#left_navigation li {width:180px; height:50px; color:#ddd;font-size:18px;font-weight:bold;}
+#left_navigation li:hover, #left_navigation li:hover a{color:#bbb;}
+#left_navigation li.current, #left_navigation li.current a{color:#000;}
+#left_navigation li a {color:#fff;}
+#left_navigation1 {background:url('../images/buttons/button_left_blank.png') no-repeat top left;}
+#left_navigation1.current {background:url('../images/buttons/button_left_highlighted.png') no-repeat top left;}
+#left_navigation2 {background:url('../images/buttons/button_right_blank.png') no-repeat top left;}
+#left_navigation2.current {background:url('../images/buttons/button_right_highlighted.png') no-repeat top left;}
+#right_content{float:left;width:1000px;height:500px;border: 1px solid #FFF;margin-left:100px;}
+
 /* -- if want tab to change background image
-#leftnav{height:55px;}
-#leftnav_left_li{background:url('../images/buttons/button_left_blank.png') no-repeat top left;}
-#leftnav_right_li{background:url('../images/buttons/button_right_blank.png') no-repeat top left;}
-#leftnav > div {color:#fff; text-align:center;width:75px;height:31px;display:inline;float:left;padding-top:7px;font-size:13px;font-weight:bold;vertical-align:center;}
-#leftnav > div:hover a {color:#000;text-align:center;width:75px;height:31px;display:inline;float:left;}
-#leftnav a {color:#fff;}
-#leftnav_left_li:hover {background:url('../images/buttons/button_left_highlighted.png') no-repeat top left;}
-#leftnav_right_li:hover {background:url('../images/buttons/button_right_highlighted.png') no-repeat top left;}
+#left_navigation{height:55px;}
+#left_navigation_left_li{background:url('../images/buttons/button_left_blank.png') no-repeat top left;}
+#left_navigation_right_li{background:url('../images/buttons/button_right_blank.png') no-repeat top left;}
+#left_navigation > div {color:#fff; text-align:center;width:75px;height:31px;display:inline;float:left;padding-top:7px;font-size:13px;font-weight:bold;vertical-align:center;}
+#left_navigation > div:hover a {color:#000;text-align:center;width:75px;height:31px;display:inline;float:left;}
+#left_navigation a {color:#fff;}
+#left_navigation_left_li:hover {background:url('../images/buttons/button_left_highlighted.png') no-repeat top left;}
+#left_navigation_right_li:hover {background:url('../images/buttons/button_right_highlighted.png') no-repeat top left;}
 */
 
 /*------- for Event Screen --------*/
@@ -106,7 +107,7 @@ img#help_logo {height:30px;width:30px;float:left;padding-top:5px;margin-right:10
 .evheader {margin: 0 auto; position: relative;}
 .evheader .evheader {border: 0;}
 
-/* different classes for leftnav subitems, sortable by class
+/* different classes for left_navigation subitems, sortable by class
 <div class="eventred b">eventred miss</div>
 <div class="eventred a">eventred skip</div>
 <div class="eventorange g">eventorange 7</div>
@@ -147,11 +148,11 @@ img#help_logo {height:30px;width:30px;float:left;padding-top:5px;margin-right:10
 /*patients is whole left column*/
 #patients{overflow:auto;}
 /*left tabs of dashboard screen*/
-.leftinner{background-color:#2B2B2B;text-align:left;height:30px;font-size:12px;font-weight:bold;border-bottom:2px solid #000;padding:10px 0 0 12px;}
-.leftinner a{color:#999;}
-.leftinner:hover  {background-color:#404040;cursor:pointer;}
-.leftinner.current {background-color:#F2F2ED;color:#BC003B;}
-.leftinner.current a {color:#BC003B;}
+.left_navigation_tab{background-color:#2B2B2B;text-align:left;height:30px;font-size:12px;font-weight:bold;border-bottom:2px solid #000;padding:10px 0 0 12px;}
+.left_navigation_tab a{color:#999;}
+.left_navigation_tab:hover  {background-color:#404040;cursor:pointer;}
+.left_navigation_tab.current {background-color:#F2F2ED;color:#BC003B;}
+.left_navigation_tab.current a {color:#BC003B;}
 
 
 /*-------------- Placeholder text div (when no data) ---------------*/

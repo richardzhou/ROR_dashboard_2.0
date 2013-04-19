@@ -11,7 +11,7 @@
   <div id="doctor">
     <a href="javascript:void(0);" onclick="showhelp()"><img id="help_logo" src="/images/help.png"></a>
     <!--header.username = @current_user.username-->
-    Hello, <%= header.username %>.&nbsp;&nbsp;<span style="color:#F58220;"></span>
+    <%= "#{t('.hello')}, #{header.username} ." %>&nbsp;&nbsp;<span style="color:#F58220;"></span>
     <%= link_to t('.logout'), logout_path, :method=>:delete, :data=>{:confirm=>t('.logout_confirmation')} %>
   </div>
   <div id="logo">

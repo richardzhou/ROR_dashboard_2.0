@@ -1,0 +1,8 @@
+<ul id="left_navigation">
+  <%= render :partial=> 'navigation_tab',
+             #:collection => %w{ t('.dashboard') t('.patient_list') t('.events&tasks') t('.analytics') t('.search') t('.settings') },
+             :collection => [t('.dashboard'), t('.patient_list'), t('.events&tasks'), t('.analytics'), t('.search'), t('.settings')],
+             :spacer_template => "spacer"
+  %>
+</ul>
+

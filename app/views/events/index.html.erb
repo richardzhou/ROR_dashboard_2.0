@@ -33,7 +33,11 @@
 =end
 %>
 <%= render :partial=> 'shared/header', :object=>@current_user %>
-<%= render :partial=> 'left_event' %>
-<%= render :partial=> 'middle_event' %>
-<%= render :partial=> 'right_event' %>
+<div id="main">
+  <%= render :partial=> 'left_navigation' %>
+  <%= render :partial=> 'right_content' %>
+</div>
+
+<!--<%= render :partial=> 'middle_event' %>-->
+<!--<%= render :partial=> 'right_event' %>-->
 
