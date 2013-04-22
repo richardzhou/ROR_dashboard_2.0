@@ -157,6 +157,7 @@ img#help_logo {height:30px;width:30px;float:left;padding-top:5px;margin-right:10
 .current_pane {display: block;}
 
 
+
 /*-------------- Placeholder text div (when no data) ---------------*/
 #event_ph_div {border:0px solid #eee;background:#222;position:absolute;z-index:80;margin-top:21px;}
 #em_ph_text {display:block;padding-top: 25px;font-size: 16px;font-weight: bold;font-style: italic;color: #eee;margin:0 10px;}
