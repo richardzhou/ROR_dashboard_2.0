@@ -1,1 +1,7 @@
-<div id="right_content"></div>
+<div id="right_content">
+  <%= render :partial=> 'content_pane',
+             #:collection => %w{ t('.dashboard') t('.patient_list') t('.events&tasks') t('.analytics') t('.search') t('.settings') },
+             :collection => [t('.dashboard'), t('.patient_list'), t('.events&tasks'), t('.analytics'), t('.search'), t('.settings')],
+             :spacer_template => "spacer"
+  %>
+</div>
