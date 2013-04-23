@@ -1,6 +1,6 @@
 class Help < ActiveRecord::Base
   attr_accessible :quick_start, :full_manual, :su_quick_start, :su_full_manual, :support_email, :support_phone, :doc1, :doc2
-  attr_accessor :quick_start, :full_manual, :su_quick_start, :su_full_manual, :support_email, :support_phone, :doc1, :doc2
+  #attr_accessor :quick_start, :full_manual, :su_quick_start, :su_full_manual, :support_email, :support_phone, :doc1, :doc2
   #never-changing data can be stored into memory using CONSTANT when Rails starts (only effective in production mode)
   QUICK_START=self.first.quick_start
   FULL_MANUAL=self.first.full_manual

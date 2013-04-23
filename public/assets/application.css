@@ -1,0 +1,750 @@
+@charset "utf-8";/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+
+
+
+ */
+/*
+// Place all the styles related to the events controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*/
+
+
+/* CSS Document */
+
+html{height:100%;}
+body{height:100%;}
+body,div{padding:0px;margin:0px;color:#fff;font-family:Helvetica, Arial, sans-serif;text-align:center;}
+a{text-decoration:none;}
+img{border:none;}
+.placeholder{color:#aaa;}
+.clear {clear:both;margin:0px;border:none;}
+.nodisplay {display:none;}
+
+.notactiverow {opacity:0.4;filter:alpha(opacity=40);}
+.activerow {background-color:#fff;opacity:1.0;filter:alpha(opacity=100);border:double 2px #D40035;border-left:none;border-right:none;}
+/*------------------  words counter  --------------------*/
+.counter{font-weight:bold;color:#ccc;}
+.exceeded { color:#e00; }
+.warning { color:#600; }
+/*------------------  header info  --------------------*/
+#popups {position:absolute;z-index:100;display:none;}
+
+#header{background:#222 /*url('../images/arrows.png') top center no-repeat*/; margin:0x; height:40px; width:100%; box-shadow: 0px 10px 10px #000;line-height:40px;/*min-width:1100px;*/}
+#header #e2{width:18px; text-align:center; margin:0 auto;border:1px solid red;display:none;}
+#header #e2 span {visibility:hidden;}
+#group_select{float:left;background-color:#222;padding:0px;}
+#group_select select{background:#222;border:#ECE7D9 1px solid;border-radius:5px;color:#ECE7D9;font-size:12px;}
+#manager {float:left;/* width:280px; */text-align:left; padding-left:8px;font-size:15px;}
+#doctor{float:right;font-size:13px;background-color:#222;margin-right:10px;}
+/*#logo {float:right;font-family:sans-serif; width:200px;color:#404040; font-size:18px;font-weight:bold;margin-right:60px;}*/
+#logo {float:right;width:200px;height:40px;margin-right:15px;background:url('../images/logotext.png') top center no-repeat;margin-top:1px;}
+.header_orange {color:#F58220;}
+#doctor a{color:#F58220;}
+.bullet {color:#F4922A;font-size:11px;vertical-align:middle;line-height:40px;}
+#shadedropdown {position:absolute;top:40px;left:50%;color:#fff;background:#222 url('../images/shade_bg.jpg') top left repeat;width:50%;left:0px;width:100%;height:100%;padding:30px 0;z-index:9998;}
+#shadedropdown  img{position:absolute;height:40px;width:20px;margin:0 auto;}
+#shadeleft {position:absolute;top:30px;border-radius:5px}
+.shadeleft_navigation_tab {border-bottom:2px solid #111;height:32px;text-align:left;padding:14px 0 0 14px;background:#222;font-size:15px;font-weight:bold;}
+.shadeleft_navigation_tab:hover {background-color:#ccc;}
+.activeshade {color:#C13C41;background:#222 url('../images/checkmark_blue.png') 96% 50% no-repeat;}
+#help_dropdown {display:none;position:absolute;top:40px;right:10px;min-width:280px;color:#222;background:#FFED9E url('../images/paper_ryan.jpg') top left repeat;border:2px solid #111;padding:15px;z-index:9999;border-radius:10px;font-size:14px;font-weight:bold;}
+img#help_logo {height:30px;width:30px;float:left;padding-top:5px;margin-right:10px;}
+#helpdropdown p {display:none;} /*remove these next 3 lines to add back in dashboard full manual */
+#helpdropdown span {margin-top:9px !important;}
+#helpdropdown span span {margin-top:0}
+
+
+#patient{margin:8px 20px;float:left;font-size:17px;background-color:#222;}
+#tempinfo {position:fixed; top:50;left:50;color:#000;font-weight:bold;}
+#thecharts {position:absolute;}
+.charticon {position:relative !important; width:40px !important;}
+#sitecharts, #subcharts {position:absolute;width:100%;height:100%;background:url('../images/opaque_bg2.png') top left repeat;z-index:1;/*background:#333;opacity:0.95;filter:alpha(opacity=95);*/ /* For IE8 and earlier */}
+.subchart {/*position:absolute;top:25%;left:25%;*/margin:0 auto; border:1px solid #ddd; padding:10px; background:#222; z-index:2; display:inline-block;}
+
+/*----------------------  left column  ---------------------*/
+/*whole left column*/
+#left{border:none;position:absolute;top:87px;}
+#main {width: 100%;height: 100%;margin-top: 50px;}
+/*styling for left side nav (Events/Patients tab)*/
+#left_navigation {list-style-type:none;float:left;margin:0px}
+#left_navigation :hover{cursor:pointer;}
+#left_navigation li {width:180px; height:50px; color:#ddd;font-size:18px;font-weight:bold;}
+#left_navigation li:hover, #left_navigation li:hover a{color:#bbb;}
+#left_navigation li.current, #left_navigation li.current a{color:#000;}
+#left_navigation li a {color:#fff;}
+#left_navigation1 {background:url('../images/buttons/button_left_blank.png') no-repeat top left;}
+#left_navigation1.current {background:url('../images/buttons/button_left_highlighted.png') no-repeat top left;}
+#left_navigation2 {background:url('../images/buttons/button_right_blank.png') no-repeat top left;}
+#left_navigation2.current {background:url('../images/buttons/button_right_highlighted.png') no-repeat top left;}
+#right_content{float:left;width:1000px;height:500px;border: 1px solid #FFF;margin-left:100px;}
+
+/* -- if want tab to change background image
+#left_navigation{height:55px;}
+#left_navigation_left_li{background:url('../images/buttons/button_left_blank.png') no-repeat top left;}
+#left_navigation_right_li{background:url('../images/buttons/button_right_blank.png') no-repeat top left;}
+#left_navigation > div {color:#fff; text-align:center;width:75px;height:31px;display:inline;float:left;padding-top:7px;font-size:13px;font-weight:bold;vertical-align:center;}
+#left_navigation > div:hover a {color:#000;text-align:center;width:75px;height:31px;display:inline;float:left;}
+#left_navigation a {color:#fff;}
+#left_navigation_left_li:hover {background:url('../images/buttons/button_left_highlighted.png') no-repeat top left;}
+#left_navigation_right_li:hover {background:url('../images/buttons/button_right_highlighted.png') no-repeat top left;}
+*/
+
+/*------- for Event Screen --------*/
+/* wrapper for box with all dates*/
+#event{background-color:#222;overflow-y:auto;overflow-x:hidden;position:relative;/*border-left:2px solid #222;*//*min-width:300px;*/}
+
+/*tabs of left column for event screen*//*eventdatetab is headers with dates, eventinner is all items for each day*/
+.eventdatetab , #pendingbar{text-align:left;padding:3px 0 0 10px;background:#555;height:18px;font-size:11px;font-weight:bold;color:#ECE7D9;border-bottom:1px solid #000;}
+.eventdatetabnone {display:none !important;}
+.eventdatetableft {text-align:left;display:inline-block;}
+.eventdatetabright {float:right;padding-right:4px;display:inline-block;}
+
+.eventinner, .groupinner {border-left:10px #605849 solid; text-align:left; height:33px;color:#ECE7D9;font-size:11px; border-bottom:1px solid #000; padding-left:6px; background-color:#2B2B2B;}
+.eventinner a, .pendinginner a{text-decoration:none;color:#ECE7D9;}
+.eventinner:hover, .pendinginner:hover {background-color:#404040;}
+.eventinner table, .groupinner table {width:100%; height:100%;}
+.eventinner table td, .groupinner table td {vertical-align:middle;} /*table to vertically center text in events tab*/
+.eventinner:active, .pendinginner:active, {background:#555;}
+
+.eventinner span.eventpatientname {color:#88ADB6;}
+.eventinner a.eventaction {color:#F1811F;}
+
+.bottomborder {/*border-bottom:1px solid #000;*/}
+.groupevent {padding-left:15px;}
+.groupedEventDisplayNone {display:none;}
+
+/*for sticky-slider date event header */
+.evheader {margin: 0 auto; position: relative;}
+.evheader .evheader {border: 0;}
+
+/* different classes for left_navigation subitems, sortable by class
+<div class="eventred b">eventred miss</div>
+<div class="eventred a">eventred skip</div>
+<div class="eventorange g">eventorange 7</div>
+<div class="eventorange f">eventorange 4</div>
+<div class="eventorange e">eventorange 9</div>
+<div class="eventorange d">eventorange 6</div>
+<div class="eventorange c">eventorange 8</div>
+<div class="eventorange b">eventorange 5</div>
+<div class="eventorange a">eventorange 10</div>
+<div class="eventnodata">eventnodata</div>
+<div class="eventgreen b">eventgreen 3</div>
+<div class="eventgreen a">eventgreen 0</div>
+*/
+.eventred {border-left:10px solid #D70038;}
+.eventorange {border-left:10px solid #F48221;}
+.eventnodata {border-left:10px solid #605849;}
+.eventgreen {border-left:10px solid #0F0;display:none;} /*richard added*/
+/*.eventyellow {border-left:10px solid #F48221;}*/
+
+/*isn't used*/
+.event_checkmark {background:url('../images/checkmark.png') right center no-repeat;height:20px;float:right;width:20px;display:none;}
+
+#pending{overflow:auto;background-color:#222;}
+.pendinginner {background:#2B2B2B url('../images/pendingbar.png') top left no-repeat; text-align:left; height:33px;color:#ECE7D9;font-size:11px; border-bottom:1px solid #000;/*border-left:10px #2B2B2B solid;*/padding-left:16px;}
+
+/*highlight active event in Events or Pending module */
+.eventselected {background-color:#F58220;opacity:0.8;filter:alpha(opacity=80);}
+.eventselected {background-color:#fff;opacity:1.0;filter:alpha(opacity=100);border-top:double 2px #D40035;border-bottom:double 2px #D40035;color:#555;}
+.eventselected a{color:#555;}
+
+#loadingbar {position:relative;margin-top:-20px;background:white;z-index:2000;}
+#loadingbar img {height:20px;}
+.loadingbarhidden {visibility:hidden;}
+/*.noteventselected {opacity:0.4;filter:alpha(opacity=40);}*/
+
+
+/*------- for Patients screen --------*/
+/*patients is whole left column*/
+#patients{overflow:auto;}
+/*left tabs of dashboard screen*/
+.left_navigation_tab{background-color:#2B2B2B;text-align:left;height:30px;font-size:12px;font-weight:bold;border-bottom:2px solid #000;padding:10px 0 0 12px;}
+.left_navigation_tab a{color:#999;}
+.left_navigation_tab:hover  {background-color:#404040;cursor:pointer;}
+.current_tab {background-color:#F2F2ED;color:#BC003B !important;}
+.current_tab a {color:#BC003B;}
+.right_content_pane {display: none;}
+.current_pane {display: block;}
+
+
+
+/*-------------- Placeholder text div (when no data) ---------------*/
+#event_ph_div {border:0px solid #eee;background:#222;position:absolute;z-index:80;margin-top:21px;}
+#em_ph_text {display:block;padding-top: 25px;font-size: 16px;font-weight: bold;font-style: italic;color: #eee;margin:0 10px;}
+#em_ph_text span {font-size:18px;}
+#em_ph_text p {font-size:16px;}
+
+#ps_ph_div {border:0px solid red;background:url('../images/paper_ryan.jpg');position:absolute;z-index:80;border-radius:10px 10px 0px 0px;}
+#ps_ph_text {display:block;padding-top:40px;font-weight: normal;font-style: italic;color:#F58220; margin:0 40px;}
+#ps_ph_text span {font-size:28px;}
+#ps_ph_text p {font-size:22px;padding-top:8px;}
+#ps_ph_text span.subinfo {font-size:18px;display:block;padding-top:4px;}
+
+#ct_ph_div {border:0px solid #eee;background:#222;position:absolute;z-index:80;margin-top:0px;}
+#ct_ph_text {display:block;padding-top: 25px;font-size: 16px;font-weight: bold;font-style: italic;color: #eee;margin:0 10px;}
+#ct_ph_text span {font-size:18px;}
+#ct_ph_text p {font-size:16px;}
+
+
+#leftfooter{margin-top:15px;}
+/* + sign at bottom of left patient column */
+#leftfooter #addFilterButton {float:left;border:none;margin:0px;height:29px;width:48px;cursor:pointer;background:url('../images/addfilter.png');}
+
+#searchbar{float:right;border:2px solid #000;border-radius:10px;background-color:#222;text-align:left;}
+#magnifier{background:url("../images/magnifier.png") no-repeat;width:22px;height:22px;cursor:pointer;margin:0px 5px;border:none;}
+
+#searcharea{background:transparent none;margin:0px;border:none;border-radius:10px;height:20px;color:#fff;}
+.suggestions{background-color:#555;padding:2px 6px;border:1px solid #000;color:#FFF;font-size:15px;text-align:left;}
+.suggestions:hover{background-color:#69F;}
+#searcharea.error{background-color:#F00;}
+
+
+/*-------------------  Middle panel  --------------------*/
+#middleEvents,#middlePatients {position:absolute;background-color:#f2f2f2;top:142px;background:url('../images/paper_ryan.jpg');border-bottom:none;border-radius:10px 10px 0px 0px;box-shadow:8px 5px 19px #000,-8px -5px 19px #000;}
+#middleEvents {border-radius:10px;}
+/*#middlePatients{position:absolute;background-color:#f2f2f2;top:142px;background:url('../images/paper_ryan.jpg');border-bottom:none;border-radius:10px 10px 0px 0px;box-shadow:8px 5px 19px #000,-8px -5px 19px #000;}*/
+/*#todaybutton{background:#555;height:30px;font-size:16px;font-weight:bold;border-radius:10px 10px 0px 0px;color:#fff;border-bottom:2px solid #000;padding-top:4px;}
+#todaybutton a {color:#fff;}*/
+
+/* whole middle panel */
+#middlepanel {overflow-y:auto;overflow-x:hidden;position:relative;} /*Events page middle column*/
+.middleheaderbutton{float:right;color:#000;padding:8px;background-color:#FFFFFF;}
+/*#result {overflow:auto;background-color:#fff;width:100%;margin:0;}*/
+
+/*--- info for Event screen ---*/
+/*PAPER STACK*/
+.middlestory {border-bottom:1px #999 solid;} /*whole wrapper for each day*/
+.middleheader{margin:0 auto;padding:0;/*background:url('../images/paper_ryan.jpg');*/background-color:#D8D9D4;border-radius:10px 10px 0px 0px;} /*contains date*/
+.middleheaderhidden{display:none;}
+/*these are the big date on left of column*/
+.date{float:left;padding:10px;/*background-color:#FCFFCC;*/} /*header for new day in midle panel */
+.date .middlebigdate {float:left;font-size:40px;height:40px;color:#D4364F;text-shadow: 1px 1px 0px #222;}
+.middledaydate {float:right;margin-left:10px;} /* just wrapper for day/month/year */
+.middleweekday {text-align:left;height:20px;font-size:17px;color:#D4364F;text-shadow: 1px 1px 1px #000;}
+.middlemonth {text-align:left;color:red;height:20px;font-size:17px;color:#D4364F;text-shadow: 1px 1px 1px #000;} /* month and year */
+.middleclear {clear:both;height:30px;border:none;}
+.middleInnerNote {color:#000;font-size:12px;text-align:left;margin:10px;} /*richard adds*/
+.middleInnerSysNote {color:#777;font-size:12px;text-align:left;margin:10px;} /*richard adds*/
+
+/*these are the individual reports*//*("A-H took 1 pill manually...")*/
+/*PAPER STACK*/
+.eventbody{color:#000;}
+.eventheader{color:#000;border-bottom:2px #aaa solid;margin:0px;padding-top:20px;/*background-color:#D8D9D4;*/}
+.eventheadercurrent{background-color:#D8D9D4;}
+.eventheaderleft{float:left;color:#999;margin:12px 0px 0px 12px;font-size:12px;font-style:italic;}
+.eventheadermiddle{float:left;font-size:20px;margin:7px 0 0 70px;color:#000;cursor:pointer;}
+.eventheadermiddle{float:right;margin:7px 20px 0 0;font-size:20px;color:#999;cursor:pointer;}
+.eventheaderright{float:right;color:#999;font-size:18px;}
+.eventmain{color:#000;margin:0px;}
+.eventmainleft{float:left;color:#000;margin:5px 0 0 8px;width:50px;height:50px;background:url('../images/iconpill.png') top left no-repeat;}
+.eventmainlefticon{background-color:#FFF;}
+.susflagimg {height:40px;width:40px;position:absolute;display:block;float:left;margin-left:5px;margin-top:30px;}
+.eventmainright{float:left;color:#000;margin:18px 15px 20px 0;width:85%;}
+.eventheadline{color:#2E2E2D;margin:10px;text-align:justify;font-size:20px;font-weight:bold;}
+.eventheadline a{color:#88ADB6;}
+.eventmainright p {margin:40px 10px 10px 10px;text-align:left;font-size:13px;font-weight:bold;}
+.eventmainright span {margin:10px 0 25px 10px;float:left;text-align:left;font-size:13px;color:#444;}
+
+.eventcontent{color:#666;margin:10px;word-wrap:break-word;text-align:justify;background-color:#FFF;}
+.eventtasks{color:#000;margin:10px;text-align:left;}
+
+/*.papernotselected {background:#444;opacity:0.4;filter:alpha(opacity=40);}*/
+.papernotselected {background-color:#D8D9D4;opacity:0.4;filter:alpha(opacity=40);}
+.completed {background:#F0FFC5 url('../images/Completed.png') top left no-repeat !important;}
+.completedstep {color:#5C6A44 !important;font-style:italic;}
+
+.flagged {background:#FFF2F2 url('../images/flag1.png') top left no-repeat;}
+
+/*tasks part of middle column, with phone/sms icons*/
+.eventtasks .middletable {width:100%;border-collapse:collapse;}
+.eventtasks .middletable td {border:1px #CCC solid;font-size:13px;padding:5px;font-weight:bold;color:#555;}
+.middletable td {vertical-align:middle;line-height:32px;}
+.iconnotepad {position:relative;}
+
+#faceiddropdown {text-align:center;}
+#faceiddropdown img {width:120px;height:160px;}
+
+.middletable .picpilltable {width:100%;border-collapse:collapse;height:100px;}
+.middletable .picpilltable td {text-align:center;font-size:9px;margin:0;padding:0;border:0 none;}
+.middletable .picpilltable td  img {margin:0 auto;width:100px;height:75px;padding:0/* 5px*/;}
+.middletable .picpilltable tr.smaller td{margin:0;padding:0;line-height:12px;}
+.middletable .picpilltable tr.errors td{font-size:12px;font-weight:bold;margin:0;padding:0;}
+
+.stepserror, .stepsnoerror {color:#555;font-weight:bold;text-align:left;font-size:12px;padding-bottom:8px;} /*used for drop-down div of each step*/
+.stepserror img, .stepsnoerror img {margin:0 auto;display:block;clear:both;}
+.middletable td.errortext, .errortext {color:#d55;color:#9D1337;font-weight:bold;}/*for main line of text in steps table*/
+/*.stepserror images {width:100px;height:75px;margin-right:8px;}*/
+img.errorimg {border:5px solid #CB0037;} /*for pill images with errors*/
+img.warningimg {border:2px solid #CB0037;} /*for pill images with errors*/
+.stepserror .errordesc, .stepsnoerror .errordesc {line-height:16px;color:#555;text-align:left;}
+.stepserror .stepimage, .stepsnoerror .stepimage {float:left;margin:0 12px 0 8px;}
+.stepserror .stepimage img, .stepsnoerror .stepimage img {width:100px; height:75px;}
+.susdiv {color:#000;font-size:11px;font-weight:normal;float:right;margin-top:-14px;}
+.flaggedstepimg {position:relative;float:right;margin:5px -65px 0 0;height:20px;width:20px;}
+
+/*for sticky-slider middle date header */
+.mpheader {margin: 0 auto; position: relative;border-radius:10px 0px 0px 0px;}
+.mpheader .mpheader {border: 0;}
+.mpheader2 {margin: 0 auto; position: relative;}
+.mpheader2 .mpheader2 {border: 0;}
+
+.checkbox{border-right:#F00 2px solid;}
+.contacticon{float:right;margin:0px 1px;}/* sms/phone icons */
+.contacticon input{font-size:10px;width:50px;background-color:#FFF;}
+.eventbutton{color:#000;margin:10px;}
+
+.videoicon{float:right;margin:0px 1px 0 3px;}
+.noteicon{text-align:left;}
+#contactdropdown {text-align:center;}
+
+div.reasonblock {margin-left:10px;font-size:14px;}
+div.reasonblock input {margin-left:5px;}
+div.reasonblock textarea {margin:2px 0 0 20px;}
+.lastofday {color:#ccc;display:none;}
+div.reasonblock div.counter {visibility:hidden;} /*dont show character count for adding note*/
+
+/*--- for Patients screen --*/
+/*header has # of pateints, phone/sms icons*/
+.middleheader_p{margin:0 auto;}
+.headerleft{/*float:left;*/color:#000;/*padding:10px 0 10px 25px;*/border-radius:10px 10px 0 0;/*width:100%;*//*margin-right:16px;*/}
+.patientsnum {font-size:40px;color:#A0A09A;padding-right:10px;text-shadow: 1px 1px 0px #222;float:left;margin-left:20px;}
+.headerlefttext{color:#E04C64;line-height:45px;vertical-align:top;/*margin-top:20px;*/font-weight:bold;float:left;}
+.headerleft span{vertical-align:top;}
+
+.headerright{float:right;padding-right:10px;text-align:left;font:italic 12px bold;}
+.headerbar{clear:both;background-color:#DEDFD9;}
+.filter{float:left;background-color:#DEDFD9;padding:0px 5px;font-size:15px;line-height:32px;}
+.filter select{background:none;border:hidden;color:#039;font-size:15px;}
+.threebuttons{float:left;margin-left:15px;margin-top:3px;}
+.buttonstyle{float:right;}
+.mainleft{float:left;}
+.mainright{float:right;}
+
+.grapharea{overflow:auto;height:45px;padding:5px;}
+
+/* patient info (Patients screen)*/
+/*Tables displayed for patient list*/
+#allPatients, #missDosePatients, #lateDosePatients, #currentLatePatients {overflow:auto;position:relative;} /* the divs*/
+table.patientstable {border-collapse:collapse;padding:0;font-size:16px;margin:2px auto;color:#000;width:95%;clear:both;}
+table.patientstable th {border:1px solid grey;color:#fff;background-color:#2b2b2b;/*background-color:#626975;*/cursor:default;font-size:12px;padding:0 0px;}
+table.patientstable th:first-child{min-width:60px;}
+/*table.patientstable tr.over {background-color:#999;}*/
+table.patientstable tr:hover {background-color:#ddd;/*cursor:pointer;*/}
+table.patientstable td{border:1px solid grey;padding:20px 0px;font-size:14px;}
+table.patientstable td a{color:#000;text-decoration:none;}
+table.patientstable td:first-child{font-size:17px;min-width:60px;}
+table.patientstable ul {clear:both;}
+table.patientstable tr.inactive, .inactive {background:#666;}
+.inactiveIcon{background:#222;border-radius:0.7em;color:#fff;margin:5px;padding:5px;font-weight:bold;font-size:12px;}
+.inactiveShowArrow{font-size:22px;color:#000;cursor:pointer;font-weight:bold;}
+
+.battery, table.patientstable td.battery {font-size:9px;font-weight:bold;padding-left:2px;color:#fff;}
+.battery0, table.patientstable td.battery0 {background:url('../images/battery0.png') center center no-repeat;font-size:10px !important;}
+.battery1, table.patientstable td.battery1 {background:url('../images/battery1.png') center center no-repeat;font-size:10px !important;}
+.battery2, table.patientstable td.battery2 {background:url('../images/battery2.png') center center no-repeat;font-size:10px !important;}
+.battery3, table.patientstable td.battery3 {background:url('../images/battery3.png') center center no-repeat;font-size:10px !important;}
+.battery4, table.patientstable td.battery4 {background:url('../images/battery4.png') center center no-repeat;font-size:10px !important;}
+.battery5, table.patientstable td.battery5 {background:url('../images/battery5.png') center center no-repeat;font-size:10px !important;}
+.battery6, table.patientstable td.battery6 {background:url('../images/battery6.png') center center no-repeat;font-size:10px !important;}
+.batteryUnknown, table.patientstable td.batteryUnknown {background:url('../images/qmark.png') center center no-repeat;font-size:10px !important;}
+
+table.patientstable td.signal {}
+table.patientstable td.signal img {}
+table.patientstable td.signal span {display:block;clear:both;font-size:9px;font-weight:bold;margin:0 0 -10px 4px;}
+table.patientstable td.contact {}
+table.patientstable td.contact a {display:block;}
+table.patientstable td.contact span {display:block;}
+table.patientstable td.contact span img {cursor:pointer;}
+
+/*tr.even{background-color:#C2C8D4;}*/
+
+/*
+#allPtientList th.sortUp, #missPtientList th.sortUp, #latePtientList th.sortUp {background:#626975 url(../images/asc.gif) no-repeat right center;}
+#allPtientList th.sortDown, #missPtientList th.sortDown, #latePtientList th.sortDown {background:#626975 url(../images/desc.gif) no-repeat right center;}
+*/
+
+/*header for 7-day chart*/
+.sevendaysbox{padding:0px;width:30%;}
+.sevendaysbox ul{margin:0 0 0 3px;padding:0px;list-style-type:none;}
+.sevendaysbox ul li{display:inline-block;padding:0 1px;width:22px;font-size:10px;font-weight:bold;margin:0 2px;}
+.patientpercentageheader {font-size:10px;color:#fff;margin:0 0 0 10px !important;text-align:center;}
+.mobiheader {float:right;font-size:10px;color:#fff;margin:0 0 0 10px;}
+/*info for 7-day chart*/
+.content{padding:0px;/*background:#ddf;*/}
+.content ul{margin:4px 0 0 5px;padding:0px;list-style-type:none;color:#000;/*height:20px;*/}
+.content ul li{display:inline-block;border:1px solid #CCC;width:22px;height:16px;vertical-align:bottom;line-height:16px;margin:8px 0 0 2px;padding:0 1px;}
+.patientpercentage {font-size:12px;color:#000;width:35px;line-height:40px; vertical-align:middle;text-align:right;margin:0 0 0 16px;border:none !important;margin-left:10px !important;}
+/*styles for 7-day chart*/
+.adherence_good {background:#C1FFAF;font-size:10px;}
+.adherence_yellow {background:#FAFFA8;font-size:10px;}
+.adherence_bad {background:#FF8E84;font-size:10px;}
+.adherence_off {background:#E9E2FF;font-size:10px;margin-top:-3px;}
+.adherence_unknown {background:#FFF7FA;font-size:8px;}
+.adherence_nodata {background:#FFF7FA;font-size:8px;}
+
+.filterRule{border:1px solid #fff;padding:2px;border-radius:5px;display:inline-block;}
+
+#errorline {margin-top:1px;margin-left:0px;}
+#errorline li {vertical-align:top;margin-top:0;border:none;display:inline-block;/*margin:0 2px 0 3px;*/padding:0 2px;height:8px;}
+#errorline li.error {background:url('../images/errortriangle.png') top center no-repeat;}
+.errordiv {position:fixed;border:2px solid #222;background-color:#eee;color:#000;font-weight:bold;z-index:5;border-radius:10px;padding:20px 10px;}
+.contactmsg {position:fixed;border:2px solid #222;background-color:#eee;color:#000;z-index:500;border-radius:10px;padding:20px 20px 10px;font-size:10px;}
+.msglabel {font-size:10px;display:inline-block;margin-top:-8px;vertical-align:middle;color:#000;}
+
+/*--- for Patient Chart screen ---*/
+#patientinfoName {float:left;margin:15px 0 25px 15px;color:#E14D64;font-size:36px;}
+#patientinfoKey {float:left;text-align:left;font:italic 12px bold;}
+#patientinfoContact {float:right;margin:28px;}
+#patientinfoPrint {float:right;margin:8px 30px 0 0;}
+#currentTimeprint {float:right;margin-top:22px;color:#000;display:none;width:30%;text-align:right;margin-right:15px;}
+#Rangeprint {color: black; float: right; width:50%; clear:both; display:none;text-align:right;margin-right:15px;}
+#legend {text-align:center;color:#000;font-size:10px;height:39px;position:absolute;top:70px;right:20px;right:2px;border:1px solid grey;display:none;}
+#legend span {display:block;display:inline;padding:1px 6px;line-height:18px;}
+#legend span img {border:none;vertical-align:middle;height:15px;width:15px;}
+
+#printdd {position:fixed;border:2px solid #000;background-color:#eee;;z-index:500;padding:5px;border-radius:10px;}
+#printdd div {text-align:left;color:#000;font-size:13px}
+#printdd div #daterangelabel.selected {color:#000;}
+#printdd div #daterangelabel.notselected {color:#888;}
+#printdd button {margin-top:10px;padding:4px 8px;}
+#printdd .daterangetext {width:60px;}
+
+/* Summary / Compliance / Communication / Note */
+#middleTabNav {margin:0;}
+#middleTabNav ul{list-style-type:none;padding:0px;float:left;margin:0 0 0 5px;}
+#middleTabNav li{background:#CCCCCC;display:inline;border:#000 solid 1px;border-bottom:none;padding:10px 11px;margin:0px 3px;border-radius:5px 5px 0 0;color:#000;}
+#middleTabNav li a{color:#000;}
+#middleTabNav .current {background:#fff;}
+
+/*-- for patient chart --*/
+/*middle panel*/
+#middleTabResult {overflow:auto;background-color:#fff;width:100%;margin:29px 0 0;}
+/*boxes on patient chart*/
+.patientSummary {color:#000;margin:20px 10px;border:1px solid grey;border-radius:5px;}
+.patientSummaryHeader {color:#636363;text-align:left;background-color:#F0F0EB;border-radius:5px 5px 0 0;}
+/*patient images*/
+.photo{float:left;width:112px;height:112px;}
+.photo img {height:100%; width:100%; border:none;}
+/*patient info next to images*/
+#pinfo {/*float:left;*/}
+.summaryTable{height:112px;color:#000;/*margin-left:10px;*/padding:0 0 0 5px;}
+.summaryTable th{text-align:left;color:#E9842E;font-size:14px;min-width:150px;}
+.summaryTable td{text-align:left;color:#4C4C4C;font-size:14px;font-weight:bold;padding-left:6px;}
+.twoweekstats {font-size:12px;margin-left:6px;}
+
+/*for compliance chart*/
+#content_compliance{margin:10px auto;width:96%;height:100%;border:1px solid grey;color:#000;border-radius:5px 5px 0 0;}
+#cc_header{color:#636363;text-align:center;background-color:#F0F0EB;width:100%;border-radius:5px 5px 0 0;}
+#cc_data {margin:0 auto;width:100%;/*overflow-x:scroll;*/overflow-x:auto;height:180px;} /*richard modified*/
+#cc_data ul{margin:4px 0 0 0px;padding:0px;list-style-type:none;color:#000;white-space:nowrap;height:10px;}
+#cc_data ul li{display:inline-block;border:1px solid grey;width:36px;height:10px;vertical-align:bottom;line-height:10px;white-space:nowrap;}
+#cc_data ul.vids{margin:4px 0 0 0px;padding:0px;list-style-type:none;color:#000;white-space:nowrap;height:80px;}
+#cc_data ul.epros{margin:4px 0px;padding:0px;list-style-type:none;color:#000;white-space:nowrap;height:20px;}
+#cc_data ul.vids li {display:inline-block;border:1px solid grey;width:36px;height:72px;line-height:24px;vertical-align:bottom;white-space:nowrap;padding:0 0 12px;} /*richard modified*/
+#cc_data ul.epros li {display:inline-block;border:1px solid grey;width:36px;height:15px;vertical-align:bottom;white-space:nowrap;padding:0 0 4px;}
+#cc_data ul.vids li div{width:36px;height:24px;line-height:24px;vertical-align:bottom;white-space:nowrap;} /*richard modified*/
+#cc_data ul.days{margin:4px 0 0 0px;padding:0px;list-style-type:none;color:#000;white-space:nowrap;height:14px;}
+#cc_data ul.days li{display:inline-block;border:1px solid white;width:36px;height:14px;line-height:14px;vertical-align:bottom;white-space:nowrap;font-size:9px;font-weight:normal;text-align:center;}
+#cc_data ul.months{margin:8px 0 0 0px;padding:0px;list-style-type:none;color:#000;white-space:nowrap;height:14px;}
+#cc_data ul.months li{display:inline-block;border:1px solid white;width:36px;height:14px;line-height:14px;vertical-align:bottom;white-space:nowrap;font-size:9px;font-weight:bold;text-align:center;}
+#cc_data li.adherence_good img {height:9px;} /*for reclassified images*/
+.compliancevids {/*background:url('../images/video.png') top left no-repeat;*/padding:2px 0;}
+.epro_diary {padding:2px 0;}
+.compliancevids  a{display:block;}
+.compliancevids img {z-index:-2;padding-left:2px;}
+/*.compliancevids images.videopillpic {height:14px;width:14px;visibility:visible;margin-left:-12px;}*/
+.compliancevids img.videopillpic {height:14px;width:14px;visibility:visible;vertical-align:top;margin-top:6px;}
+.compliancevids img.videopillpicleft {margin-left:-28px;}
+.compliancevids img.videopillpicright {margin-left:2px;}
+#loadSevenVideo {background:#222}
+#thevideo {float:left;}
+#dateimage {float:right;background:#222;padding:5px 5px;color:#fff;}
+#dateimage table {display:block;margin-top:60px;}
+#dateimage table td {padding:0 2px;}
+#dateimage table td img.vidstepimg {width:156px; height:208px;}
+#undervideo {clear:both; background:#999;}
+
+#complianceTable {margin:10px auto;width:96%;height:100%;border:1px solid grey;color:#000;border-radius:5px 5px 0 0;font-size:15px;}
+#complianceTable img {height:20px;width:20px;float:right;}
+.vidflag {width:17px;margin:6px 0 0 -18px;vertical-align:top;padding:0;}
+
+
+/* note tab of patient chart */
+.notediv {color:#000;margin:40px 10px 20px;}
+#noteTable {margin:10px auto;width:100%;height:100%;border:1px solid grey;color:#000;border-radius:5px 5px 0 0;font-size:15px;}
+#noteTable th{border-right:2px solid #FFF; color:#000; padding:0px 0 0 4px; background-color:#626975;text-align:left;}
+#noteTable td{font-size:12px;text-align:left;}
+#ffnotehdr {margin-top:10px;color:#000;}
+
+/* message tab of patient chart */
+.c2dmMsgdiv {color:#000;margin:15px;}
+#c2dmMsgTable {margin:10px auto;width:100%;height:100%;border:1px solid grey;color:#000;border-radius:5px 5px 0 0;font-size:15px;}
+#c2dmMsgTable td{font-size:12px;}
+
+#medicationname{font-size:20px;color:#000;margin:30px 0 -6px !important;}
+
+/*for Message page of patient chart*/
+#patientmessage {margin-top:30px;color:#000;}
+#patientmessage span {display:inline-block;line-height:10px;vertical-align:middle;margin-top:-5px;color:#000;}
+#patientmessage #sentmessages {margin-top:30px;color:#000;}
+#patientmessage #sentmessages #messageheader {color:#444;font-size:18px; font-weight:bold;}
+
+
+/*for settings tab of patient chart*/
+#patientsettings {margin:40px 10px 5px;color:#000;}
+#patientsettings span {font-size:14px;font-weight:bold;color:#000;width:85%;margin:0 auto;display:block;}
+#patientsettings .alarminfo {color:#000;display:block;width:85%;margin:30px auto 0;}
+#patientsettings .alarminfo select {color:#000;border:1px solid #444;}
+#patientsettings .alarminfo p {display:inline;margin-right:20px;font-size:16px;color:#000;}
+#patientsettings .alarminfo button {margin:0 16px;}
+#patientsettings #pdisclaim {display:block;margin-top:6px;}
+#patientsettings #pdisclaim  span {font-size:10px;color:#000;display:inline;vertical-align:top;line-height:18px;}
+#patientsettings #alarmsuccess {margin:10px auto 0;color:#444;width:85%;text-align:center;}
+
+#guidanceChange img {cursor:pointer;}
+
+/*---------------------  Right panel  ----------------------*/
+#right{border:none;position:absolute;top:87px;}
+
+/*right tab headers */
+/*#rightnav{height:31px;margin-bottom:24px;}*/
+#rightnav{height:55px;}
+#rightnav ul{list-style-type:none;padding:0px;margin:0px;float:right;}
+#rightnav ul:hover{cursor:pointer;}
+#rightnav li {min-width:60px; max-width:75px; height:31px; color:#ddd;float:left;display: inline;padding-top:7px;font-size:13px;font-weight:bold;text-align:center;}
+#rightnav li:hover {text-shadow: 1px 1px 6px #fff;}
+#rightnav li.current, #rightnav li.current a {color:#000;}
+#rightnav li a {color:#fff;}
+#rightnav #rightTab1 {background:url('../images/buttons/button_left_blank.png') no-repeat top left;}
+#rightnav #rightTab1.current {background:url('../images/buttons/button_left_highlighted.png') no-repeat top left; color:#000;}
+#rightnav #rightTab2, #rightnav #rightTab3 {background:url('../images/buttons/button_middle_blank.png') no-repeat top left;}
+#rightnav #rightTab2.current, #rightnav #rightTab3.current {background:url('../images/buttons/button_middle_highlighted.png') no-repeat top left;color:#000;}
+#rightnav #rightTab4 {background:url('../images/buttons/button_right_blank.png') no-repeat top right;}
+#rightnav #rightTab4.current {background:url('../images/buttons/button_right_highlighted.png') no-repeat top right;}
+#comptaskstext{float:left;font-size:14px;font-weight:bold;color:#fff;clear:both;margin:-3px 0 0 4px;}
+
+/*right column*/
+#completedtasks{overflow:auto;background-color:#222;border-radius:5px;position:relative;clear:both;}
+/*styling of tabs in right column*/
+/*date tabs*/
+.righttabs {text-align:left;background-color:#555;height:20px;font-size:11px;font-weight:bold;border-bottom:1px solid #000;padding:6px 0 0 8px;}
+.righttabsnone {display:none;} /*for when we remove headers for days with no data, otherwise interferes with sticky header*/
+/*inner tasks*/
+.checkmark_left {background:url('../images/checkmark.png') left center no-repeat;width:20px;}
+.rightinner{background-color:#222;text-align:left;height:33px;color:#ECE7D9;font-size:11px;font-style:italic;border-bottom:1px solid #000; padding-left:6px;}
+.rightinner:hover{cursor:pointer;}
+.rightinner a {color:#ECE7D9;text-decoration:none;line-height:14px;}
+.rightinner table {width:100%; height:100%;border-collapse:collapse;border:none;padding:5px;margin:0;}
+.rightinner table td {vertical-align:middle;}
+
+/* For styling of date tab in CT */
+.tasksdatetableft {text-align:left;display:inline-block;}
+.tasksdatetabright {float:right;padding-right:10px;display:inline-block;}
+
+/*for sticky-slider date event header */
+.rtheader {margin: 0 auto; position: relative;}
+.rtheader .rtheader {border: 0;}
+
+#settings {color:#F58220;text-align:right;margin:15px 8px 0 0;font-size:13px;}
+#settings a {color:#F58220;}
+
+/* for patients screen*/
+#rightfooter{margin-top:15px;}
+#date{float:right;background:rgba(0,0,0,0.7);border-radius:0 10px 10px 0;padding:5px;border:#000 solid 1px;}
+#list{float:right;background:rgba(0,0,0,0.7);border:#000 solid 1px;border-radius:10px 0 0 10px;padding:5px;}
+#ct{float:left;font-size:17px;line-height:30px;}
+#list a,#ct a,#date a{text-decoration:none;color:#fff;}
+
+
+/*-----------------------  Misc  -------------------------*/
+#twiliooutgoingcall {position:absolute;display:none;z-index:200;width:100%;height:95%;}
+#callPanel {
+    background:url('../images/logowithtext fullsize.png') no-repeat scroll center 30px,url('http://static0.twilio.com/packages/quickstart/whitey.png') repeat scroll center top transparent;margin:0px auto;text-align:center;width:600px;height:410px;box-shadow: 1px 2px 10px #BBB;}
+
+#twiliocancelbuttonoutgoing {float:right;}
+#modifytemplate1 { display:none;width:600px;height:160px;background:url('http://static0.twilio.com/packages/quickstart/whitey.png') repeat scroll center top transparent;margin:0px auto;box-shadow: 1px 2px 10px #BBB;
+}
+
+#patientname1,#patientname2,#whichtime1,#whichtime2 {
+    color:#930;}
+#calltowhom {color:#0066FF;}
+#modifytemplate2 {display:none;width:600px;height:160px;background:url('http://static0.twilio.com/packages/quickstart/whitey.png') repeat scroll center top transparent;margin:0px auto;box-shadow: 1px 2px 10px #BBB;}
+#slideupbutton1,#slideupbutton2 {
+    color:#F00;cursor:pointer;}
+/*#modify1, #modify2 {margin-left:50px;}*/
+
+#twilioincomingcall {position:absolute;z-index:200;width:100%;height:95%;}
+#callLogo {background:url('../images/logowithtext.png') no-repeat scroll center 30px,url('http://static0.twilio.com/packages/quickstart/whitey.png') repeat scroll center top transparent;margin:0px auto;text-align:center;width:600px;height:410px;box-shadow: 1px 2px 10px #BBB;}
+#twiliocancelbuttonincoming {float:right;}
+
+
+/*------------------------------use css3 animation to realize lighting button------------------------------------*/
+
+.newData{
+    float:right;
+    display:block;
+    background: #60cb1b;
+    margin:0px;
+    font-size: 13px;
+    padding: 5px 5px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+
+    text-shadow: 0 -1px 1px rgba(0,0,0,0.3);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-shadow: 0 0 5px rgba(255, 255, 255, 0.6) inset, 0 0 3px rgba(220, 120, 200, 0.8);
+    -webkit-box-shadow: 0 0 5px rgba(255, 255, 255, 0.6) inset, 0 0 3px rgba(220, 120, 200, 0.8);
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.6) inset, 0 0 3px rgba(220, 120, 200, 0.8);
+
+    -webkit-animation-name: "webkitButtonLight";
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+
+    -moz-animation-name: mozButtonLight;
+    -moz-animation-duration: 5s;
+    -moz-animation-iteration-count: infinite;
+
+}
+
+@-webkit-keyframes 'webkitButtonLight' {
+    from {
+        background: rgba(96, 203, 27,0.5);
+        -webkit-box-shadow: 0 0 5px rgba(255, 255, 255, 0.3) inset, 0 0 3px rgba(220, 120, 200, 0.5);
+        color: red;
+    }
+    25% {
+        background: rgba(196, 203, 27,0.8);
+        -webkit-box-shadow: 0 0 10px rgba(255, 155, 255, 0.5) inset, 0 0 8px rgba(120, 120, 200, 0.8);
+        color: blue;
+    }
+    50% {
+        background: rgba(196, 203, 127,1);
+        -webkit-box-shadow: 0 0 5px rgba(155, 255, 255, 0.3) inset, 0 0 3px rgba(220, 120, 100, 1);
+        color: orange;
+    }
+    75% {
+        background: rgba(196, 203, 27,0.8);
+        -webkit-box-shadow: 0 0 10px rgba(255, 155, 255, 0.5) inset, 0 0 8px rgba(120, 120, 200, 0.8);
+        color: black;
+    }
+    to {
+        background: rgba(96, 203, 27,0.5);
+        -webkit-box-shadow: 0 0 5px rgba(255, 255, 255, 0.3) inset, 0 0 3px rgba(220, 120, 200, 0.5);
+        color: green;
+    }
+}
+
+@-moz-keyframes mozButtonLight
+{
+    from {
+        background: rgba(96, 203, 27,0.5);
+        -moz-box-shadow: 0 0 5px rgba(255, 255, 255, 0.3) inset, 0 0 3px rgba(220, 120, 200, 0.5);
+        color: red;
+    }
+    25% {
+        background: rgba(196, 203, 27,0.8);
+        -moz-box-shadow: 0 0 10px rgba(255, 155, 255, 0.5) inset, 0 0 8px rgba(120, 120, 200, 0.8);
+        color: blue;
+    }
+    50% {
+        background: rgba(196, 203, 127,1);
+        -moz-box-shadow: 0 0 5px rgba(155, 255, 255, 0.3) inset, 0 0 3px rgba(220, 120, 100, 1);
+        color: orange;
+    }
+    75% {
+        background: rgba(196, 203, 27,0.8);
+        -moz-box-shadow: 0 0 10px rgba(255, 155, 255, 0.5) inset, 0 0 8px rgba(120, 120, 200, 0.8);
+        color: black;
+    }
+    to {
+        background: rgba(96, 203, 27,0.5);
+        -moz-box-shadow: 0 0 5px rgba(255, 255, 255, 0.3) inset, 0 0 3px rgba(220, 120, 200, 0.5);
+        color: green;
+    }
+}
+
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}

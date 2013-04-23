@@ -9,7 +9,7 @@
     PI: <font class="header_orange">PI INFO</font>
   </div>
   <div id="doctor">
-    <a href="javascript:void(0);" onclick="showhelp()"><img id="help_logo" src="/images/help.png"></a>
+    <a href="javascript:void(0);" onclick="showHelp()"><img id="help_logo" src="<%= asset_path('help.png') %>"><!--<img id="help_logo" src="images/help.png" >--></a>
     <!--header.username = @current_user.username-->
     <%= "#{t('.hello')}, #{header.username} ." %>&nbsp;&nbsp;<span style="color:#F58220;"></span>
     <%= link_to t('.logout'), logout_path, :method=>:delete, :data=>{:confirm=>t('.logout_confirmation')} %>
@@ -17,16 +17,16 @@
   <div id="logo">
     <!--Ai<font class="bullet">&bull;</font>CURE<font class="bullet">&bull;</font>TECHNOLOGiES-->
   </div>
-  <a href="#" id="arrows"><img id="aDn" src="/images/arrows.png" style=""><img id="aUp" src="/images/arrowsUp.png" style="display:none;"></a>
+  <a href="#" id="arrows"><img id="aDn" src="<%= asset_path('arrows.png') %>" style=""><!--<img id="aDn" src="images/arrows.png" style="">--><img id="aUp" src="<%= asset_path('arrowsUp.png') %>" style="display:none;"><!--<img id="aUp" src="images/arrowsUp.png" style="display:none;">--></a>
 </div>
 <div id="help_dropdown">
   <!--<a href="manuals/<%= @documents.quick_start %>" target="_blank" style="color:#00f;">Dashboard Quick Start Guide</a>-->
   <p style="margin-top:5px;">
     <%= link_to t('.dashboard_quick_start_guide'), "/manuals/#{Help::QUICK_START}", :target => "_blank" %><br>
-    <a href="/manuals/<%= Help::FULL_MANUAL %>" target="_blank" style="color:#00f;"><%= t('.dashboard_manual') %></a>
+    <a href="/manuals/<%= Help::FULL_MANUAL %>" target="_blank" style="color:#00F;"><%= t('.dashboard_manual') %></a>
   </p>
   <p style="margin-top:2px;">
-    <%= t('.email') %>:<%= mail_to(Help::SUPPORT_EMAIL, Help::SUPPORT_EMAIL, :subject=>"Support question from #{header.username}", :encode=>"javascript") %><br>
-    <%= t('.phone') %>:<span><%= Help::SUPPORT_PHONE %></span>
+    <%= t('.email') %>:&nbsp;<%= mail_to(Help::SUPPORT_EMAIL, Help::SUPPORT_EMAIL, :subject=>"Support question from #{header.username}", :encode=>"javascript") %><br>
+    <%= t('.phone') %>:&nbsp;<span><%= Help::SUPPORT_PHONE %></span>
   </p>
 </div>

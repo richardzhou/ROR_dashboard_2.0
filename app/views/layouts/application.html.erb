@@ -3,13 +3,17 @@
 <head>
   <link type="image/x-icon" href="images/logo.png" rel="icon">
   <title><%= @title || Dashboard %></title>
-  <!--<%= stylesheet_link_tag    "application", :media => "all" %>-->
-  <!--<%= javascript_include_tag "application" %>-->
-  <%= stylesheet_link_tag 'test', :cache => "all" %>
-  <%= javascript_include_tag 'jquery', 'rails', 'events', :cache => "all" %>
+
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+
+  <%#= stylesheet_link_tag 'test', :cache => "all" %>
+  <%#= javascript_include_tag 'jquery', 'rails', 'events', :cache => "all" %>
+
   <%= csrf_meta_tags %>
 </head>
-<body style="background: url(images/bg_leather.jpg) repeat fixed left top;">
+<body style="background: url(<%= asset_path('bg_leather.jpg') %>) repeat fixed left top;">
+<!--<body style="background: url(images/bg_leather.jpg) repeat fixed left top;">-->
 
 <%= yield %>
 

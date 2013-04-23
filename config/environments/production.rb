@@ -20,6 +20,10 @@ Dashboard::Application.configure do
   # Generate digests for assets URLs
   config.assets.digest = true
 
+  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
+  # config.assets.precompile += %w( search.js )
+  config.assets.precompile += %w( login_page.js )
+
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
@@ -45,9 +49,6 @@ Dashboard::Application.configure do
   # Enable serving of images, stylesheets, and JavaScripts from an asset server
   # Default position of images, stylesheets, and JavaScripts is the 'public' folder on you local host/server
   # config.action_controller.asset_host = "http://assets.example.com"
-
-  # Precompile additional assets (application.js, application.css, and all non-JS/CSS are already added)
-  # config.assets.precompile += %w( search.js )
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
