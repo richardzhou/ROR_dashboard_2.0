@@ -1,5 +1,11 @@
 Dashboard::Application.routes.draw do
 
+  resources :medications
+
+
+  resources :patients
+
+
   #get 'users/retrieve_password'
   match 'users/retrieve_password' => 'users#retrieve_password', :via => [:post], :as => 'retrieve_password'
 
