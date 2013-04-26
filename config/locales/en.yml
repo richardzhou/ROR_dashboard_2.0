@@ -34,11 +34,17 @@ en:
       search: "Search"
       settings: "Settings"
     right_content:
-       dashboard: "Dashboard"
-       patient_list: "Patient List"
-       events&tasks: "Events & Tasks"
-       analytics: "Analytics"
-       search: "Search"
-       settings: "Settings"
+      dashboard:
+        dashboard: "Dashboard"
+      patient_list:
+        patient_list: "Patient List"
+      events_and_tasks:
+        events_and_tasks: "Events & Tasks"
+      analytics:
+        analytics: "Analytics"
+      search:
+        search: "Search"
+      settings:
+        settings: "Settings"
 
 

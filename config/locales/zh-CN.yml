@@ -34,9 +34,15 @@ zh-CN:
       search: "搜索"
       settings: "设置"
     right_content:
-      dashboard: "控制面板"
-      patient_list: "病人列表"
-      events&tasks: "事件 & 任务"
-      analytics: "分析统计"
-      search: "搜索"
-      settings: "设置"
+      dashboard:
+        dashboard: "控制面板"
+      patient_list:
+        patient_list: "病人列表"
+      events_and_tasks:
+        events_and_tasks: "事件 & 任务"
+      analytics:
+        analytics: "分析统计"
+      search:
+        search: "搜索"
+      settings:
+        settings: "设置"

@@ -1,5 +1,5 @@
 /* Place all the styles related to the session controller here. */
-/* They will automatically be included in application.css. */
+/* They will automatically be included in application.css.erb. */
 /* You can use Sass (SCSS) here: http://sass-lang.com/ */
 
 /*@charset "utf-8";*/
@@ -14,8 +14,8 @@ body,div{
   text-align:center;
 }
 body{
-  background: #1C1C1C url(/images/bg_login.jpg) no-repeat top center fixed;/*for browsers that dont support multiple background images*/
-  background: url(/images/bg_login.jpg) no-repeat top center fixed, url(/images/bg_tile.jpg) repeat top left fixed;
+  background: #1C1C1C url(<%= asset_path('bg_login.jpg') %>) no-repeat top center fixed;/*for browsers that dont support multiple background images*/
+  background: url(<%= asset_path('bg_login.jpg') %>) no-repeat top center fixed, url(<%= asset_path('bg_tile.jpg') %>) repeat top left fixed;
 }
 
 img{border:none;}

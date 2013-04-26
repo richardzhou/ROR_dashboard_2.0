@@ -1,5 +1,5 @@
 // Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+// All this logic will automatically be available in application.js.erb.
 // You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 // JavaScript Document
@@ -8,7 +8,7 @@ window.onload = initDate;
 
 function initDate()
 {
-    //alert(1);
+    //alert(11222222);
     document.getElementsByName('username').item(0).focus();
     var lang='';
     detectLanguage();
@@ -164,7 +164,7 @@ $(document).ready(function(e)
         $.ajax({
             type: 'POST',
             url: '/users/retrieve_password',
-            //url: '<%= retrieve_password_path %>', # this way does not work
+            //url: '<%#= retrieve_password_path %>', // this way does not work
             data: {username:uname,email:email},
             dataType: 'json',
             success: function(data)

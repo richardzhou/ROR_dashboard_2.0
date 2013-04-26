@@ -16,7 +16,7 @@
   <%#= javascript_include_tag 'jquery', 'rails', 'sessions', :cache => "all" %>
   <%#= csrf_meta_tags %>
 </head>
-<body>
+<body id="<%= controller_name+'-'+action_name %>">
 
 <%= yield %>
 

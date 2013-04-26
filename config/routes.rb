@@ -1,7 +1,7 @@
 Dashboard::Application.routes.draw do
 
   #get 'users/retrieve_password'
-  post 'users/retrieve_password'
+  match 'users/retrieve_password' => 'users#retrieve_password', :via => [:post], :as => 'retrieve_password'
 
   #controller :sessions do
   #  get 'login' => :new

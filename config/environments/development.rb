@@ -30,10 +30,20 @@ Dashboard::Application.configure do
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Do not compress assets
-  config.assets.compress = false
+  config.assets.compress = false  # default is false
+  #config.assets.compress = true
 
   # Expands the lines which load the assets
-  config.assets.debug = true
+  config.assets.debug = true # default is true
+  #config.assets.debug = false
+
+  # Generate digests for assets URLs
+  #config.assets.digest = true    # default is nil (no this setting in development environment), but we can add it(if enable digest in development environment, must restart server to make the changes in js/css files happen, whether do 'rake assets:precompile' or not)
+
+  # In development environment, Rails will fallback to assets pipeline(enable 'just-in-time compilation') if a precompile asset is missed
+  # 在开发模式下，如果进行了资产预编译 – 那么如果 Rails 找不到预编译的资产，它会打开实时编译功能。
+  # 在生产模式下，实时编译功能默认情况下处于禁用状态(config.assets.compile = false   # default in production environment is false)。
+
 
 
   config.action_mailer.smtp_settings = {
